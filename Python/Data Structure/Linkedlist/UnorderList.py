@@ -6,7 +6,7 @@ class UnorderList():
 
     def isempty(self):
         return self.head == None
-        
+
     def add(self,item):
         temp = Node(item)
         temp.setnext(self.head)
@@ -15,6 +15,3 @@ class UnorderList():
 if __name__ == '__main__':
     mylist = UnorderList()
     mylist.add(10)
-    print('creat')
-
-        
