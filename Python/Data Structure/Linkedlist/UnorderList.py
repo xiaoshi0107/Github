@@ -49,9 +49,38 @@ class UnorderList():
                     previous.setnext(current.getnext())
         return found
 
+    def check(self,):
+        current = self.head
+        while current != None:
+            print(current.getdata())
+            current = current.getnext()
+    
+    def append(self,data):
+        current = self.head
+        while current != None and current.getnext() !=None:
+            current = current.getnext()
+        current.setnext(Node(data))
+    
+    def pop(self):
+        current = self.head
+        while current.getnext().getnext() != None:
+            current = current.getnext()
+        current.setnext(None)
+
 
 if __name__ == '__main__':
     print('start')
     mylist = UnorderList()
     mylist.add(10)
-    print(mylist.search(10))
+    mylist.add(11)
+    mylist.add(12)
+    mylist.add(13)
+    mylist.add(14)
+    mylist.add(15)
+    mylist.add(16)
+    mylist.add(17)
+    mylist.add(18)
+    mylist.check()
+    mylist.pop()
+    print('--------')
+    mylist.check()
