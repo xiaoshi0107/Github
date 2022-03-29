@@ -29,7 +29,24 @@ class UnorderList():
                 found = True
             else:
                 current = current.getnext()
-        
+
+        return found
+
+    def remove(self, item):
+        current = self.head
+        previous = None
+        found = False
+        while current != None:
+            if current.getdata() != item:
+                previous = current
+                current = current.getnext()
+
+            else:
+                found = True
+                if previous is None:
+                    self.head = self.head.getnext()
+                else:
+                    previous.setnext(current.getnext())
         return found
 
 
